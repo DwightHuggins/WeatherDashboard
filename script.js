@@ -306,7 +306,7 @@ function storeCity(cityName) {
   }
   if (listOfSearchedCities.includes(cityName)) {
     console.log("ALREADY SEARCHED");
-    listOfSearchedCities = listOfSearchedCities.filter(function (city) {
+    listOfSearchedCities = listOfSearchedCities.filter(function (city) {nges
       return city !== cityName;
     });
     listOfSearchedCities.unshift(cityName);
