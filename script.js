@@ -25,16 +25,7 @@ var listOfSearchedCities = JSON.parse(localStorage.getItem("searched-cities"));
 if (!listOfSearchedCities) {
   listOfSearchedCities = [];
 }
-// else {
-//   listOfSearchedCities.forEach(function (city) {
-//     city.toUpperCase();
-//   });
-// }
 
-// if (getSeachedCitiesFromLS !== null) {
-//   getSeachedCitiesFromLS.forEach(function(city) {city.toUpperCase();});
-//   listOfSearchedCities = getSeachedCitiesFromLS;
-// }
 
 $(document).ready(function () {
   displayCities(listOfSearchedCities);
@@ -44,10 +35,6 @@ $(document).ready(function () {
     searchCity(listOfSearchedCities[0]);
   }
 
-  // if (getSeachedCitiesFromLS !== null) {
-  //   var lastCity = listOfSearchedCities[0];
-  //   searchCity(lastCity);
-  // }
 });
 
 $("#search-btn").on("click", function () {
@@ -58,41 +45,7 @@ $("#search-btn").on("click", function () {
   $("#search-input").val("");
   searchCity(cityName);
 
-  // if (cityName === "") {
-  //   return;
-  // }
-
-  // if (listOfSearchedCities.includes(cityName)) {
-  //   console.log("ALREADY SEARCHED");
-  //   listOfSearchedCities = listOfSearchedCities.filter(function (city) {
-  //     return city !== cityName;
-  //   });
-  //   listOfSearchedCities.unshift(cityName);
-  //   localStorage.setItem(
-  //     "searched-cities",
-  //     JSON.stringify(listOfSearchedCities)
-  //   );
-  // }
-  // displayCities(listOfSearchedCities);
-  // if (listOfSearchedCities[0] !== cityName) {
-  //   listOfSearchedCities.unshift(cityName);
-  //   localStorage.setItem(
-  //     "searched-cities",
-  //     JSON.stringify(listOfSearchedCities)
-  //   );
-  //   if (listOfSearchedCities.length === 1) {
-  //     $("#searched-cities-card").removeClass("hide");
-  //   }
-
-  //   console.log($("ul#searched-cities-list a").length);
-  //   if ($("ul#searched-cities-list a").length >= 5) {
-  //     $("ul#searched-cities-list a:eq(4)").remove();
-  //   }
-  //   $("#searched-cities-list")
-  //     .prepend(`<a href="#" class="list-group-item" style="text-decoration: none; color: black;">
-  //   <li>${cityName}</li>
-  //   </a>`);
-  // }
+  
 });
 
 $(document).on("click", ".list-group-item", function () {
@@ -111,7 +64,7 @@ function displayCurrentWeather() {
   var humidityEl = $("<p>").text("Humidity: " + humidityValue + "%");
   var windSpeedEl = $("<p>").text("Wind Speed: " + windSpeed + " MPH");
   var uvIndexEl = $("<p>").text("UV Index: ");
-  // var uvIndexValueEl = $("<span>").text(uvIndexValue).css("background-color", getColorCodeForUVIndex(uvIndexValue)).addClass("text-white");
+  
   var uvIndexValueEl = $("<span>")
     .text(uvIndexValue)
     .css("background-color", getColorCodeForUVIndex(uvIndexValue));
